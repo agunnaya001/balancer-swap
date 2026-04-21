@@ -3,13 +3,15 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: BalancerSwap DEX API specification
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: dex
+    description: DEX contract data and transactions
 paths:
   /healthz:
     get:
@@ -24,6 +26,93 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /dex/config:
+    get:
+      operationId: getDexConfig
+      tags: [dex]
+      summary: Get DEX contract addresses and config
+      responses:
+        "200":
+          description: DEX configuration
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DexConfig"
+  /dex/pool-stats:
+    get:
+      operationId: getPoolStats
+      tags: [dex]
+      summary: Get current pool reserves and price
+      responses:
+        "200":
+          description: Pool statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PoolStats"
+  /dex/transactions:
+    get:
+      operationId: getTransactions
+      tags: [dex]
+      summary: Get recent swap and liquidity transactions
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 20
+        - in: query
+          name: type
+          schema:
+            type: string
+            enum: [swap, add_liquidity, remove_liquidity]
+      responses:
+        "200":
+          description: List of recent transactions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Transaction"
+    post:
+      operationId: recordTransaction
+      tags: [dex]
+      summary: Record a completed transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTransaction"
+      responses:
+        "201":
+          description: Transaction recorded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+  /dex/price-history:
+    get:
+      operationId: getPriceHistory
+      tags: [dex]
+      summary: Get ETH/BAL price history
+      parameters:
+        - in: query
+          name: points
+          schema:
+            type: integer
+            default: 50
+      responses:
+        "200":
+          description: Price history points
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PricePoint"
+
 components:
   schemas:
     HealthStatus:
@@ -33,4 +122,133 @@ components:
           type: string
       required:
         - status
-
+    DexConfig:
+      type: object
+      properties:
+        tokenAddress:
+          type: string
+        dexAddress:
+          type: string
+        chainId:
+          type: integer
+        chainName:
+          type: string
+        rpcUrl:
+          type: string
+        explorerUrl:
+          type: string
+        tokenSymbol:
+          type: string
+        tokenName:
+          type: string
+      required:
+        - tokenAddress
+        - dexAddress
+        - chainId
+        - chainName
+        - rpcUrl
+        - explorerUrl
+        - tokenSymbol
+        - tokenName
+    PoolStats:
+      type: object
+      properties:
+        ethReserve:
+          type: string
+          description: ETH reserve in wei
+        tokenReserve:
+          type: string
+          description: Token reserve in token units (18 decimals)
+        totalLiquidity:
+          type: string
+          description: Total LP tokens
+        ethPrice:
+          type: string
+          description: Price of 1 ETH in BAL tokens
+        tokenPrice:
+          type: string
+          description: Price of 1 BAL in ETH
+        tvlUsd:
+          type: string
+        volume24h:
+          type: string
+        fees24h:
+          type: string
+      required:
+        - ethReserve
+        - tokenReserve
+        - totalLiquidity
+        - ethPrice
+        - tokenPrice
+        - tvlUsd
+        - volume24h
+        - fees24h
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        txHash:
+          type: string
+        type:
+          type: string
+          enum: [swap, add_liquidity, remove_liquidity]
+        userAddress:
+          type: string
+        ethAmount:
+          type: string
+        tokenAmount:
+          type: string
+        lpAmount:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        blockNumber:
+          type: integer
+      required:
+        - id
+        - txHash
+        - type
+        - userAddress
+        - ethAmount
+        - tokenAmount
+        - timestamp
+    CreateTransaction:
+      type: object
+      properties:
+        txHash:
+          type: string
+        type:
+          type: string
+          enum: [swap, add_liquidity, remove_liquidity]
+        userAddress:
+          type: string
+        ethAmount:
+          type: string
+        tokenAmount:
+          type: string
+        lpAmount:
+          type: string
+        blockNumber:
+          type: integer
+      required:
+        - txHash
+        - type
+        - userAddress
+        - ethAmount
+        - tokenAmount
+    PricePoint:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        ethPrice:
+          type: string
+        tokenPrice:
+          type: string
+      required:
+        - timestamp
+        - ethPrice
+        - tokenPrice

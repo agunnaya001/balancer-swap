@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "BalancerSwap DEX"
+version = "1.0.0"
+id = "artifacts/balancerswap"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24428
+
+[services.development]
+run = "pnpm --filter @workspace/balancerswap run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/balancerswap", "run", "build" ]
+publicDir = "artifacts/balancerswap/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24428"
+BASE_PATH = "/"
