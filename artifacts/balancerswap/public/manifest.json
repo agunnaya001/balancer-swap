@@ -1,0 +1,19 @@
+{
+  "name": "BalancerSwap DEX",
+  "short_name": "BalancerSwap",
+  "description": "Swap ETH and BAL tokens on Sepolia testnet",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0f1e",
+  "theme_color": "#0a0f1e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "utilities"]
+}
