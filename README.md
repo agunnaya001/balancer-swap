@@ -1,14 +1,31 @@
-# BalancerSwap
+<div align="center">
+  <img src="artifacts/balancerswap/public/logo.png" alt="BalancerSwap Logo" width="120" />
+  <h1>BalancerSwap</h1>
+  <p><strong>Decentralized Exchange on Ethereum Sepolia</strong></p>
+</div>
+
+<div align="center">
 
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.24-363636?logo=solidity)](https://soliditylang.org/)
 [![Hardhat](https://img.shields.io/badge/Hardhat-2.22-f7d24d?logo=hardhat)](https://hardhat.org/)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-6851ff?logo=ethereum)](https://sepolia.etherscan.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
 [![ethers.js](https://img.shields.io/badge/ethers.js-v6-2535a0)](https://docs.ethers.org/v6/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8?logo=pwa)](https://web.dev/pwa)
 
-> **A minimal constant-product AMM (Uniswap v2 style) deployed on Ethereum Sepolia testnet. Swap ETH ↔ $BAL, provide liquidity, and earn fees — all from a slick, dark-themed web UI.**
+</div>
+
+---
+
+<div align="center">
+  <img src="artifacts/balancerswap/public/og-image.png" alt="BalancerSwap DEX" width="100%" style="border-radius:12px;" />
+</div>
+
+---
+
+> **A minimal constant-product AMM (Uniswap v2 style) deployed on Ethereum Sepolia testnet. Swap ETH ↔ $BAL, provide liquidity, and earn fees — all from a slick, dark-themed web UI. Installable as a PWA on mobile.**
 
 ---
 
@@ -217,4 +234,4 @@ Click **Connect Wallet** in the top-right corner. MetaMask will prompt you to co
 
 ## License
 
-MIT — see [LICENSE](./LICENSE) for details.
+MIT © [agunnaya001](https://github.com/agunnaya001) — see [LICENSE](./LICENSE) for full text.

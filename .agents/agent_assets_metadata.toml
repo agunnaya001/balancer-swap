@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "W6Kb7b1jSgmsZCEuX2wdv"
+uri = "file://artifacts/balancerswap/public/logo.png"
+type = "image"
+title = "balancerswap logo icon"
+
+[[generated]]
+id = "uf52vX7bqNL3RkKNh9Qhx"
+uri = "file://artifacts/balancerswap/public/og-image.png"
+type = "image"
+title = "balancerswap hero banner"
+
+[[generated]]
+id = "aijzRUPtg_JOZMPSY3nvn"
+uri = "file://artifacts/balancerswap/public/splash.png"
+type = "image"
+title = "balancerswap mobile splash"
+
+[[generated]]
+id = "lJNi75pR62N2UHqvka3Z2"
+uri = "file://artifacts/balancerswap/public/icon-192.png"
+type = "image"
+title = "balancerswap swap icon"

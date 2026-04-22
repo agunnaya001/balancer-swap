@@ -4,10 +4,7 @@ import { useNetwork } from "@/hooks/use-network";
 import { Button } from "@/components/ui/button";
 
 const Logo = () => (
-  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary mr-2 shrink-0">
-    <path d="M16 2L2 16L16 30L30 16L16 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M16 2L8 16L16 30L24 16L16 2Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
+  <img src="/logo.png" alt="BalancerSwap" width={32} height={32} className="mr-2 shrink-0 rounded-md" />
 );
 
 export function Navbar() {
