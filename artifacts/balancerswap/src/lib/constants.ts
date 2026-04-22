@@ -1,3 +1,8 @@
+export const BAL_TOKEN_ADDRESS = "0xD347943bFFB4266eD19C78C55CFBcE08DAB27095";
+export const DEX_ADDRESS = "0xAf1B9E1cC6af2450f58d4B9B34Ea4EBe457652cA";
+export const CHAIN_ID = 11155111;
+export const EXPLORER_URL = "https://sepolia.etherscan.io";
+
 export const DEX_ABI = [
   {"inputs":[{"name":"minTokensOut","type":"uint256"}],"name":"swapEthForTokens","outputs":[],"stateMutability":"payable","type":"function"},
   {"inputs":[{"name":"tokenAmount","type":"uint256"},{"name":"minEthOut","type":"uint256"}],"name":"swapTokensForEth","outputs":[],"stateMutability":"nonpayable","type":"function"},

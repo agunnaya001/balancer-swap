@@ -24,7 +24,7 @@ A decentralized exchange (DEX) built with a constant-product AMM (Uniswap v2 sty
 | Contract | Address |
 |---|---|
 | BALToken (ERC-20) | `0xD347943bFFB4266eD19C78C55CFBcE08DAB27095` |
-| BalancerSwap (DEX) | *pending deployment — wallet needs more Sepolia ETH* |
+| BalancerSwap (DEX) | `0xAf1B9E1cC6af2450f58d4B9B34Ea4EBe457652cA` ✅ verified |
 
 - **Deployer**: `0xFfb6505912FCE95B42be4860477201bb4e204E9f`
 - **To deploy DEX**: add Sepolia ETH to deployer wallet, then `cd contracts && npm run deploy`

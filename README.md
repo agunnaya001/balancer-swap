@@ -17,7 +17,7 @@
 | Contract | Address | Explorer |
 |---|---|---|
 | **BALToken (ERC-20)** | `0xD347943bFFB4266eD19C78C55CFBcE08DAB27095` | [View on Etherscan](https://sepolia.etherscan.io/address/0xD347943bFFB4266eD19C78C55CFBcE08DAB27095) |
-| **BalancerSwap (DEX)** | *(deploying — see below)* | — |
+| **BalancerSwap (DEX)** | `0xAf1B9E1cC6af2450f58d4B9B34Ea4EBe457652cA` | [View on Etherscan](https://sepolia.etherscan.io/address/0xAf1B9E1cC6af2450f58d4B9B34Ea4EBe457652cA) |
 
 > **Network:** Ethereum Sepolia (chainId: `11155111`)
 > **Deployer:** `0xFfb6505912FCE95B42be4860477201bb4e204E9f`

@@ -2,11 +2,10 @@
   "network": "sepolia",
   "chainId": 11155111,
   "tokenAddress": "0xD347943bFFB4266eD19C78C55CFBcE08DAB27095",
-  "dexAddress": "",
+  "dexAddress": "0xAf1B9E1cC6af2450f58d4B9B34Ea4EBe457652cA",
   "deployer": "0xFfb6505912FCE95B42be4860477201bb4e204E9f",
-  "deployedAt": "2026-04-21T18:00:00.000Z",
+  "deployedAt": "2026-04-22T10:11:24.750Z",
   "explorerUrl": "https://sepolia.etherscan.io",
   "tokenExplorerUrl": "https://sepolia.etherscan.io/address/0xD347943bFFB4266eD19C78C55CFBcE08DAB27095",
-  "dexExplorerUrl": "",
-  "note": "DEX contract pending deployment — wallet needs more Sepolia ETH. Run: cd contracts && npm run deploy"
+  "dexExplorerUrl": "https://sepolia.etherscan.io/address/0xAf1B9E1cC6af2450f58d4B9B34Ea4EBe457652cA"
 }
